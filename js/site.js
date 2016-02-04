@@ -1,14 +1,14 @@
 var activity_chart = dc.pieChart("#activity");
+
 var country_chart = dc.pieChart("#country");
-var organisation_chart = dc.rowChart("#organisation");
 var region_chart = dc.geoChoroplethChart("#map");
 var who_by_chart = dc.rowChart("#who-by");
 var who_to_chart = dc.rowChart("#who-to");
 var what_activity_chart = dc.rowChart("#what-activity");
 var what_items_chart = dc.rowChart("#what-items");
+var what_services_chart = dc.rowChart("#what-services");
 var where_province_chart = dc.rowChart("#where-province");
 var where_region_chart = dc.pieChart	("#where-region");
-
 var cf = crossfilter(data);
 
 cf.activity = cf.dimension(function (d) {
@@ -17,7 +17,7 @@ cf.activity = cf.dimension(function (d) {
 cf.country = cf.dimension(function (d) {
 		return d.REGION;
 	});
-cf.organisation = cf.dimension(function (d) {
+cf.what_services = cf.dimension(function (d) {
 		return d.Materials_Service_Provided;
 	});
 cf.region = cf.dimension(function (d) {
@@ -29,7 +29,7 @@ cf.who_by = cf.dimension(function (d) {
 	});
 
 cf.who_to = cf.dimension(function (d) {
-		return d.Activity;
+		return d.Primary_Beneficiary;
 	});
 cf.what_activity = cf.dimension(function (d) {
 		return d.Activity;
@@ -46,9 +46,8 @@ cf.where_region = cf.dimension(function (d) {
 
 var activity = cf.activity.group();
 var country = cf.country.group();
-var organisation = cf.organisation.group();
+var what_services = cf.what_services.group();
 var region = cf.region.group();
-
 var who_by = cf.who_by.group();
 var who_to = cf.who_to.group();
 var what_activity = cf.what_activity.group();
@@ -168,11 +167,11 @@ country_chart.width(260).height(220)
 	return i % 4;
 });
 
-organisation_chart.width(600).height(500)
-.dimension(cf.organisation)
-.group(organisation)
+what_services_chart.width(600).height(500)
+.dimension(cf.what_services)
+.group(what_services)
 .ordering(function (d) {
-	return -d.organisation
+	return -d.what_services
 })
 .elasticX(true)
 .data(function (group) {
