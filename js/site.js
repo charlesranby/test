@@ -59,6 +59,7 @@ var all = cf.groupAll();
 who_by_chart.width(	260).height(220)
 .dimension(cf.who_by)
 .group(who_by)
+
 .ordering(function (d) {
 	return -d.who_by
 })
@@ -113,13 +114,18 @@ what_items_chart.width(260).height(220)
 where_region_chart.width(220).height(220)
 .dimension(cf.where_region)
 .group(where_region)
-.colors([
-
-		'#7FC9FF	'
+    .slicesCap(15)
+    .innerRadius(40)
+/* .renderLabel(false)
+.legend(dc.legend())
+ */.colors([
+		'#7FC9FF'
 	])
 .colorDomain([1, 8])
 .colorAccessor(function (d, i) {
 	return i % 7 + 1;
+
+	
 });
 
 where_province_chart.width(260).height(220)
