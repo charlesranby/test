@@ -114,14 +114,23 @@ what_items_chart.width(260).height(220)
 where_region_chart.width(220).height(220)
 .dimension(cf.where_region)
 .group(where_region)
-    .slicesCap(15)
-    .innerRadius(40)
-/* .renderLabel(false)
+    .slicesCap(13)
+    .innerRadius(60)
+.renderLabel(false)
 .legend(dc.legend())
- */.colors([
-		'#EE2A24'
+.colors([
+'#898989',
+'#11d5db',
+
+'#f26763',
+
+'#be140e',
+'#ee2a24',
+'#d4413d',
+'#524826'
+	
 	])
-.colorDomain([1, 8])
+.colorDomain([1, 7])
 .colorAccessor(function (d, i) {
 	return i % 7 + 1;
 
@@ -140,6 +149,8 @@ where_province_chart.width(260).height(220)
 		'#7091B2',
 		'#1F4060' */
 		'#EE2A24'
+		
+		
 	])
 .colorDomain([1, 8])
 .colorAccessor(function (d, i) {
@@ -155,7 +166,7 @@ activity_chart.width(260).height(220)
 		'#7091B2',
 		'#1F4060'
 	])
-.colorDomain([1, 8])
+.colorDomain([1, 3])
 .colorAccessor(function (d, i) {
 	return i % 7 + 1;
 });
