@@ -68,7 +68,7 @@ who_by_chart.width(	260).height(220)
 
 		/* 		'#D7E3EF',
 		'#7091B2', */
-		'#7FC9FF'
+		'#EE2A24'
 	])
 .colorDomain([1, 8])
 .colorAccessor(function (d, i) {
@@ -80,7 +80,7 @@ who_to_chart.width(260).height(220)
 .group(who_to)
 .colors([
 
-		'#7FC9FF'
+		'#EE2A24'
 	])
 .colorDomain([1, 8])
 .colorAccessor(function (d, i) {
@@ -92,7 +92,7 @@ what_activity_chart.width(260).height(220)
 .group(what_activity)
 .colors([
 
-		'#7FC9FF'
+		'#EE2A24'
 	])
 .colorDomain([1, 8])
 .colorAccessor(function (d, i) {
@@ -104,7 +104,7 @@ what_items_chart.width(260).height(220)
 .group(what_items)
 .colors([
 
-		'#7FC9FF'
+		'#EE2A24'
 	])
 .colorDomain([1, 8])
 .colorAccessor(function (d, i) {
@@ -119,7 +119,7 @@ where_region_chart.width(220).height(220)
 /* .renderLabel(false)
 .legend(dc.legend())
  */.colors([
-		'#7FC9FF'
+		'#EE2A24'
 	])
 .colorDomain([1, 8])
 .colorAccessor(function (d, i) {
@@ -139,7 +139,7 @@ where_province_chart.width(260).height(220)
 		'#D7E3EF',
 		'#7091B2',
 		'#1F4060' */
-		'#7FC9FF'
+		'#EE2A24'
 	])
 .colorDomain([1, 8])
 .colorAccessor(function (d, i) {
@@ -188,7 +188,7 @@ what_services_chart.width(600).height(500)
 		'#70B277',
 		'#60211F',
 		'#0E2103'*/
-		'#FF7F7F'
+		'#EE2A24'
 	])
 .colorDomain([0, 8])
 .colorAccessor(function (d, i) {
@@ -198,7 +198,7 @@ what_services_chart.width(600).height(500)
 region_chart.width(600).height(480)
 .dimension(cf.region)
 .group(region)
-.colors(['#EAEAEA', '#FF7F7F'])
+.colors(['#EAEAEA', '#EE2A24'])
 .colorDomain([0, 1])
 .colorAccessor(function (d) {
 	if (d > 0) {
